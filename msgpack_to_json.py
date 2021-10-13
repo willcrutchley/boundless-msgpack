@@ -8,13 +8,13 @@ def transform(obj):
     if isinstance(obj, list):
         return [transform(element) for element in obj]
     elif isinstance(obj, dict):
-        return {keys[int(key)].decode('utf-8'): transform(value) for key, value in obj.items()}
+        return {keys[int(key)]: transform(value) for key, value in obj.items()}
     else:
         return obj
 
 def convert(file):
     with open('msgpack/%s' % file, 'rb') as in_file:
-            data = msgpack.unpack(in_file)
+            data = msgpack.unpack(in_file, strict_map_key=False)
             
     json_obj = data[0]
     global keys
