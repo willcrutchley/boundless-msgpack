@@ -1,4 +1,4 @@
-This script converts .msgpack files to .json files and visa versa, so long as they are from Boundless!
+This script converts .msgpack files to .json files and vice versa, so long as they are from Boundless!
 
 Usage: 
 This requires python3 and the pip module 'msgpack-python'. You can install this by running 'python3 -m pip install msgpack' from the command line.
